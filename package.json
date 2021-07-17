@@ -16,7 +16,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "ol": "^6.4.3"
+        "ol": "^6.5.0"
     },
     "devDependencies": {
         "react": "^16.13.1",
