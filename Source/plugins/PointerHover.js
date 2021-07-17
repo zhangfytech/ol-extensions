@@ -60,11 +60,6 @@ const PointerHover = (function(Control) {
         this.element_.innerHTML = formatFields(fields);
         // const featurePixel = map.getPixelFromCoordinate(feature.getGeometry().getCoordinates())
         // const geometry = feature.getGeometry();
-
-        console.log('====================================');
-        console.log(this.element_.clientWidth);
-        console.log(this.element_.clientHeight);
-        console.log('====================================');
         this.packElementStyle({}, pixel);
     };
 
@@ -105,7 +100,7 @@ const PointerHover = (function(Control) {
                 }
             }
 
-            const config = { ...instance };
+            const config = {...instance };
             const config_ = Object.assign(config, {
                 value: feature.get(instance.key)
             });

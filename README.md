@@ -38,18 +38,8 @@ class MapControl extends Component{
                 zoom: 10
             }),
             layers: [
-                new olExtensions.LayerUtils.TileLayer({
-                    title: "天地图卫星图",
-                    source: new XYZ({
-                        url: "http://t{0-7}.tianditu.com/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=70f3211520e87929bca5332e872f501d"
-                    })
-                }),
-                new olExtensions.LayerUtils.TileLayer({
-                    title: "天地图注记",
-                    source: new XYZ({
-                        url: "http://t{0-7}.tianditu.com/DataServer?T=cia_w&x={x}&y={y}&l={z}&tk=70f3211520e87929bca5332e872f501d"
-                    })
-                })
+               olExtensions.LayerUtils.TdtImageLayer(),
+               olExtensions.LayerUtils.TdtAnnoLayer()
             ]
         });
     }

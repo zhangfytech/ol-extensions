@@ -1,7 +1,6 @@
 import { Control } from 'ol/control';
 import { getTransformFromProjections, identityTransform, get, getUserProjection } from 'ol/proj';
 import * as events from 'ol/events';
-import { getChangeEventType } from 'ol/Object.js';
 
 function _createLongitudeLabel() {
     const longitude = document.createElement('label');
@@ -34,7 +33,7 @@ const ToolBar = (function(Control) {
             target: options.target,
             render: options.render || this.render
         });
-        events.listen(this, getChangeEventType(ToolBar.Property_.PROJECTION), this.handleProjectionChanged_, this);
+        events.listen(this, 'change:projection', this.handleProjectionChanged_, this);
         if (options.coordinateFormat) {
             this.setCoordinateFormat(options.coordinateFormat);
         }
